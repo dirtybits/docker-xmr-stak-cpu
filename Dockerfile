@@ -2,10 +2,10 @@
 # Build image
 ###
 #FROM alpine:edge AS build
-FROM alpine:3.8 AS build
+FROM alpine:3.9 AS build
 #FROM alpine:edge
 
-ENV XMR_STAK_VERSION 2.7.1
+ENV XMR_STAK_VERSION 2.8.3
 
 COPY app /app
 
@@ -15,7 +15,7 @@ RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> //etc/apk/r
 RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> //etc/apk/repositories
 RUN apk add --no-cache \
       libmicrohttpd-dev \
-      libcrypto1.0 \
+      libcrypto1.1 \
       openssl-dev \
       hwloc-dev@testing \
       numactl@edge \
